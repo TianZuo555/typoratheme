@@ -60,6 +60,7 @@ accent (`#9a9dff`) and a warm orange secondary accent (`#f47700`).
 |---|---|
 | [`plannotator.css`](./plannotator.css) | The Typora theme. |
 | [`plannotator-zed.json`](./plannotator-zed.json) | Original Zed editor theme — the source-of-truth palette this Typora theme is ported from. |
+| [`plannotator-ui.css`](./plannotator-ui.css) | Original Plannotator *product UI* design-token theme (verbatim, oklch/shadcn-style) — kept for reference. Not a Typora theme. |
 
 ## Credits
 
