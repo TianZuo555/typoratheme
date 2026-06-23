@@ -12,96 +12,117 @@
  */
 
 :root {
-  /* ---- surfaces (zed: background / surface.background / elevated_surface) ---- */
-  --bg-color:          #070b14; /* background / editor.background / status_bar */
-  --side-bar-bg-color: #151b24; /* surface.background / panel.background */
-  --surface:           #151b24;
-  --elevated:          #222935; /* elevated_surface.background / element.active */
-  --hover:             #1e242e; /* element.hover / border.variant */
+    /* ---- surfaces (zed: background / surface.background / elevated_surface) ---- */
+    --bg-color: #070b14; /* background / editor.background / status_bar */
+    --side-bar-bg-color: #151b24; /* surface.background / panel.background */
+    --surface: #151b24;
+    --elevated: #222935; /* elevated_surface.background / element.active */
+    --hover: #1e242e; /* element.hover / border.variant */
 
-  /* ---- lines & borders ---- */
-  --border:      #343b45; /* border */
-  --border-soft: #1e242e; /* border.variant */
+    /* ---- lines & borders ---- */
+    --border: #343b45; /* border */
+    --border-soft: #1e242e; /* border.variant */
 
-  /* ---- text ---- */
-  --text-color:  #dadee5; /* text / editor.foreground / terminal.foreground */
-  --text-muted:  #9da5b1; /* icon.muted / terminal.dim_white */
-  --text-dim:    #707988; /* text.placeholder / ignored */
-  --accent:      #9a9dff; /* text.accent / info / players[0] cursor  (primary) */
+    /* ---- text ---- */
+    --text-color: #dadee5; /* text / editor.foreground / terminal.foreground */
+    --text-muted: #9da5b1; /* icon.muted / terminal.dim_white */
+    --text-dim: #707988; /* text.placeholder / ignored */
+    --accent: #9a9dff; /* text.accent / info / players[0] cursor  (primary) */
 
-  /* ---- semantic accents (from zed `syntax` + status colors) ---- */
-  --orange:  #f47700; /* modified / emphasis.strong / number / constant / boolean */
-  --cyan:    #00c0cf; /* hint / constructor / label */
-  --teal:    #00ab93; /* type / enum / operator / predictive */
-  --green:   #3fc168; /* string / text.literal / created / success */
-  --amber:   #d9a514; /* warning / conflict / string.escape */
-  --red:     #f14d4c; /* error / deleted */
-  --magenta: #d568ea; /* keyword / tag */
-  --gold:    #ffca00; /* function */
-  --salmon:  #ffa359; /* variable */
-  --indigo:  #9d6afb; /* property */
-  --mint:    #61d5c0; /* attribute */
+    /* ---- semantic accents (from zed `syntax` + status colors) ---- */
+    --orange: #f47700; /* modified / emphasis.strong / number / constant / boolean */
+    --cyan: #00c0cf; /* hint / constructor / label */
+    --teal: #00ab93; /* type / enum / operator / predictive */
+    --green: #3fc168; /* string / text.literal / created / success */
+    --amber: #d9a514; /* warning / conflict / string.escape */
+    --red: #f14d4c; /* error / deleted */
+    --magenta: #d568ea; /* keyword / tag */
+    --gold: #ffca00; /* function */
+    --salmon: #ffa359; /* variable */
+    --indigo: #9d6afb; /* property */
+    --mint: #61d5c0; /* attribute */
 
-  /* ---- derived ui tokens ---- */
-  --select-bg:               rgba(154, 157, 255, 0.30); /* players[0].selection */
-  --code-bg:                 #151b24;
-  --rawblock-edit-panel-bd:  #151b24;
-  --item-hover-bg-color:     #1e242e;
-  --item-hover-text-color:   #dadee5;
-  --active-file-bg-color:    #222935;
-  --active-file-border-color:#9a9dff;
-  --active-file-text-color:  #dadee5;
-  --primary-color:           #9a9dff;
-  --window-border:           1px solid #343b45;
-  --search-hit-bg:           rgba(244, 119, 0, 0.45); /* search.active_match_background */
+    /* ---- derived ui tokens ---- */
+    --select-bg: rgba(154, 157, 255, 0.3); /* players[0].selection */
+    --code-bg: #151b24;
+    --rawblock-edit-panel-bd: #151b24;
+    --item-hover-bg-color: #1e242e;
+    --item-hover-text-color: #dadee5;
+    --active-file-bg-color: #222935;
+    --active-file-border-color: #9a9dff;
+    --active-file-text-color: #dadee5;
+    --primary-color: #9a9dff;
+    --window-border: 1px solid #343b45;
+    --search-hit-bg: rgba(
+        244,
+        119,
+        0,
+        0.45
+    ); /* search.active_match_background */
 }
 
 /* ============================================================
  * Base
  * ========================================================== */
 html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
-  margin: auto;
-  background: var(--bg-color);
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  fill: currentColor;
+    margin: auto;
+    background: var(--bg-color);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    fill: currentColor;
 }
 
 body {
-  color: var(--text-color);
-  font-family: "Inter", "PingFang SC", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.7;
+    color: var(--text-color);
+    font-family:
+        "Inter",
+        "PingFang SC",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    line-height: 1.7;
 }
 
 content {
-  background: var(--bg-color);
+    background: var(--bg-color);
 }
 
 /* the writing area */
 #write {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 42px 32px 96px;
-  color: var(--text-color);
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 42px 32px 96px;
+    color: var(--text-color);
 }
 
 @media only screen and (min-width: 1400px) {
-  #write { max-width: 980px; }
+    #write {
+        max-width: 980px;
+    }
 }
 @media only screen and (min-width: 1800px) {
-  #write { max-width: 1080px; }
+    #write {
+        max-width: 1080px;
+    }
 }
 @media only screen and (max-width: 640px) {
-  html { font-size: 15px; }
-  #write { padding: 26px 18px 64px; }
+    html {
+        font-size: 15px;
+    }
+    #write {
+        padding: 26px 18px 64px;
+    }
 }
 
 /* first block has no top margin */
@@ -114,11 +135,11 @@ content {
 #write > table:first-child,
 #write > h1:first-child,
 #write > h2:first-child {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 /* ============================================================
- * Headings  (zed: title = #9a9dff bold; cool -> warm gradient)
+ * Headings  (zed: title = #9a9dff bold)
  * ========================================================== */
 #write h1,
 #write h2,
@@ -126,189 +147,269 @@ content {
 #write h4,
 #write h5,
 #write h6 {
-  margin: 1.6em 0 0.6em;
-  padding: 0;
-  font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-  color: var(--accent);
-  clear: both;
-  word-wrap: break-word;
+    margin: 1.6em 0 0.6em;
+    padding: 0;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    clear: both;
+    word-wrap: break-word;
 }
 
-/* Each heading gets its own color — a cool -> warm sweep.
-   (Zed only exposes one `title` scope for all headings, so this
-   per-level gradient is a Typora-only enhancement.) */
 #write h1 {
-  margin-top: 0.4em;
-  font-size: 2.15em;
-  letter-spacing: -0.02em;
-  padding-bottom: 0.34em;
-  border-bottom: 1px solid var(--border);
-  color: var(--accent);   /* indigo  #9a9dff */
+    margin-top: 0.4em;
+    font-size: 2.15em;
+    letter-spacing: -0.02em;
+    padding-bottom: 0.34em;
+    border-bottom: 1px solid var(--border);
+    color: var(--cyan);
 }
 
 #write h2 {
-  font-size: 1.6em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid var(--border-soft);
-  color: var(--cyan);     /* cyan    #00c0cf */
+    font-size: 1.6em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--border-soft);
+    color: var(--accent);
 }
 
-#write h3 { font-size: 1.3em;  color: var(--teal); }   /* teal   #00ab93 */
-#write h4 { font-size: 1.12em; color: var(--green); }  /* green  #3fc168 */
-#write h5 { font-size: 1em;    color: var(--amber); }  /* amber  #d9a514 */
-#write h6 { font-size: 0.9em;  color: var(--text-muted); text-transform: none; }
+#write h3 {
+    font-size: 1.3em;
+    color: var(--text-color);
+}
+#write h4 {
+    font-size: 1.12em;
+    color: var(--text-color);
+}
+#write h5 {
+    font-size: 1em;
+    color: var(--text-muted);
+}
+#write h6 {
+    font-size: 0.9em;
+    color: var(--text-muted);
+    text-transform: none;
+}
 
 /* heading anchor / fold affordances */
-.md-heading:hover .md-heading-fold-button { color: var(--accent); }
+.md-heading:hover .md-heading-fold-button {
+    color: var(--accent);
+}
 
 /* ============================================================
  * Inline elements
  * ========================================================== */
 p,
-.mathjax-block { margin-top: 0; margin-bottom: 1rem; }
+.mathjax-block {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
 
 a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color 0.15s ease;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease;
 }
-a:hover { color: var(--cyan); text-decoration: underline; }
+a:hover {
+    color: var(--cyan);
+    text-decoration: underline;
+}
 
 /* zed: emphasis = #9a9dff ; emphasis.strong = #f47700 bold */
-strong, b { color: var(--orange); font-weight: 700; }
-em, i, dfn, cite { color: var(--accent); }
+strong,
+b {
+    color: var(--orange);
+    font-weight: 700;
+}
+em,
+i,
+dfn,
+cite {
+    color: var(--accent);
+}
 
 mark {
-  border-radius: 3px;
-  padding: 0.05em 0.3em;
-  background: rgba(244, 119, 0, 0.22);
-  color: var(--text-color);
+    border-radius: 3px;
+    padding: 0.05em 0.3em;
+    background: rgba(244, 119, 0, 0.22);
+    color: var(--text-color);
 }
-del { color: var(--text-dim); }
+del {
+    color: var(--text-dim);
+}
 
 sup.md-footnote {
-  background: var(--hover);
-  color: var(--accent);
-  font-size: 0.8em;
+    background: var(--hover);
+    color: var(--accent);
+    font-size: 0.8em;
 }
-sup.md-footnote:hover { color: var(--cyan); }
+sup.md-footnote:hover {
+    color: var(--cyan);
+}
 
 kbd {
-  display: inline-block;
-  padding: 1px 6px;
-  font-size: 0.82em;
-  font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
-  color: var(--text-color);
-  background: var(--elevated);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  box-shadow: 0 1px 0 var(--border-soft);
+    display: inline-block;
+    padding: 1px 6px;
+    font-size: 0.82em;
+    font-family: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+    color: var(--text-color);
+    background: var(--elevated);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 var(--border-soft);
 }
 
 /* ============================================================
  * Lists
  * ========================================================== */
-ul, ol { padding-left: 1.7em; margin-bottom: 1rem; }
-li { margin: 0.18em 0; }
-li::marker { color: var(--orange); }
-ul ul, ol ol, ul ol, ol ul { margin: 0.2em 0; }
+ul,
+ol {
+    padding-left: 1.7em;
+    margin-bottom: 1rem;
+}
+li {
+    margin: 0.18em 0;
+}
+li::marker {
+    color: var(--orange);
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0.2em 0;
+}
 
 /* task lists */
-.task-list { padding-left: 0; }
-.md-task-list-item { padding-left: 1.55rem; list-style: none; }
-.md-task-list-item > input {
-  margin: 0;
-  -webkit-appearance: none;
-  margin-left: -1.45rem;
-  margin-top: 0.35em;
+.task-list,
+.contains-task-list {
+    padding-left: 0;
+    list-style: none;
 }
-.md-task-list-item > input:before {
-  content: "";
-  display: inline-block;
-  width: 1.05rem;
-  height: 1.05rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  background: var(--bg-color);
-  vertical-align: middle;
-  text-align: center;
-  line-height: 1rem;
+.md-task-list-item,
+.task-list-item {
+    padding-left: 1.55rem;
+    list-style: none !important;
+    list-style-type: none !important;
 }
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before {
-  content: "\2713";
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--bg-color);
-  border-color: var(--orange);
-  background: var(--orange);
+.md-task-list-item::marker,
+.task-list-item::marker {
+    content: "";
+    color: transparent;
+    font-size: 0;
+}
+.md-task-list-item > input[type="checkbox"],
+.task-list-item > input[type="checkbox"] {
+    box-sizing: border-box;
+    width: 1.05rem !important;
+    height: 1.05rem !important;
+    min-width: 1.05rem;
+    margin: 0.35em 0 0 -1.45rem !important;
+    opacity: 1 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    display: inline-grid;
+    place-content: center;
+    border: 1.5px solid var(--text-dim);
+    border-radius: 4px;
+    background: var(--surface);
+    vertical-align: middle;
+}
+.md-task-list-item > input[type="checkbox"]:checked,
+.md-task-list-item > input[type="checkbox"][checked],
+.task-list-item > input[type="checkbox"]:checked,
+.task-list-item > input[type="checkbox"][checked] {
+    border-color: var(--orange);
+    background: var(--orange);
+}
+.md-task-list-item > input[type="checkbox"]:checked:after,
+.md-task-list-item > input[type="checkbox"][checked]:after,
+.task-list-item > input[type="checkbox"]:checked:after,
+.task-list-item > input[type="checkbox"][checked]:after {
+    content: "\2713";
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--bg-color);
+    line-height: 1;
 }
 
 /* ============================================================
  * Blockquote & hr
  * ========================================================== */
 blockquote {
-  margin: 1.2em 0;
-  padding: 0.5em 1.1em;
-  border-left: 4px solid var(--accent);
-  border-radius: 0 6px 6px 0;
-  background: var(--surface);
-  color: var(--text-color);
+    margin: 1.2em 0;
+    padding: 0.5em 1.1em;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    background: var(--surface);
+    color: var(--text-color);
 }
 blockquote blockquote {
-  border-left-color: var(--cyan);
-  background: var(--hover);
+    border-left-color: var(--cyan);
+    background: var(--hover);
 }
-blockquote blockquote blockquote { border-left-color: var(--orange); }
+blockquote blockquote blockquote {
+    border-left-color: var(--orange);
+}
 
 hr {
-  height: 1px;
-  margin: 2.2em 0;
-  border: 0;
-  background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    height: 1px;
+    margin: 2.2em 0;
+    border: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--border) 20%,
+        var(--border) 80%,
+        transparent
+    );
 }
 
 /* ============================================================
  * Code — fonts, inline code, fenced blocks
  * ========================================================== */
-code, pre, .md-fences, #typora-source, .md-meta-block {
-  font-family: "JetBrains Mono", "SF Mono", "Cascadia Code", "Fira Code",
-    Menlo, Consolas, "PingFang SC", monospace;
+code,
+pre,
+.md-fences,
+#typora-source,
+.md-meta-block {
+    font-family:
+        "JetBrains Mono", "SF Mono", "Cascadia Code", "Fira Code", Menlo,
+        Consolas, "PingFang SC", monospace;
 }
 
 /* inline code */
-code, tt {
-  font-size: 0.88em;
-  padding: 0.1em 0.38em;
-  border-radius: 4px;
-  border: 1px solid var(--border-soft);
-  background: var(--surface);
-  color: var(--cyan);
+code,
+tt {
+    font-size: 0.88em;
+    padding: 0.1em 0.38em;
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    background: var(--surface);
+    color: var(--cyan);
 }
 
 /* fenced code blocks */
 .md-fences {
-  margin: 1.2em 0 1.5em;
-  padding: 14px 16px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--code-bg);
-  color: var(--text-color);
-  font-size: 0.88em;
-  line-height: 1.55;
+    margin: 1.2em 0 1.5em;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--code-bg);
+    color: var(--text-color);
+    font-size: 0.88em;
+    line-height: 1.55;
 }
 .md-fences .code-tooltip {
-  background: var(--elevated);
-  border: 1px solid var(--border);
+    background: var(--elevated);
+    border: 1px solid var(--border);
 }
 
 /* enable-diagram languages tooltip position */
 .enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
 .enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
 .enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
-  bottom: -2.2em;
+    bottom: -2.2em;
 }
 
 /* ============================================================
@@ -316,203 +417,383 @@ code, tt {
  *  - .cm-s-inner            => code fences
  *  - .cm-s-typora-default   => source code mode
  * ========================================================== */
-.cm-s-inner, .cm-s-typora-default {
-  background: var(--code-bg);
-  color: var(--text-color);
+.cm-s-inner,
+.cm-s-typora-default {
+    background: var(--code-bg);
+    color: var(--text-color);
 }
-.cm-s-inner .CodeMirror-cursor { border-left: 2px solid var(--accent); }
-.cm-s-typora-default .CodeMirror-cursor { border-left: 2px solid var(--accent); }
+.cm-s-inner .CodeMirror-cursor {
+    border-left: 2px solid var(--accent);
+}
+.cm-s-typora-default .CodeMirror-cursor {
+    border-left: 2px solid var(--accent);
+}
 
 .cm-s-inner .CodeMirror-selected,
 .cm-s-inner .CodeMirror-line::selection,
 .cm-s-inner .CodeMirror-line > span::selection,
 .cm-s-inner .CodeMirror-line > span > span::selection,
-.cm-s-typora-default .CodeMirror-selected { background: var(--select-bg); }
+.cm-s-typora-default .CodeMirror-selected {
+    background: var(--select-bg);
+}
 
 .cm-s-inner .CodeMirror-activeline-background,
-.cm-s-typora-default .CodeMirror-activeline-background { background: rgba(34, 41, 53, 0.6); }
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: rgba(34, 41, 53, 0.6);
+}
 
 .cm-s-inner .CodeMirror-gutters,
 .cm-s-typora-default .CodeMirror-gutters {
-  background: var(--code-bg);
-  border-right: 1px solid var(--border-soft);
+    background: var(--code-bg);
+    border-right: 1px solid var(--border-soft);
 }
 .cm-s-inner .CodeMirror-linenumber,
-.cm-s-typora-default .CodeMirror-linenumber { color: var(--text-dim); }
+.cm-s-typora-default .CodeMirror-linenumber {
+    color: var(--text-dim);
+}
 
 /* shared token palette — fences + source mode */
-.cm-s-inner .cm-keyword,      .cm-s-typora-default .cm-keyword      { color: var(--magenta); }
-.cm-s-inner .cm-atom,         .cm-s-typora-default .cm-atom         { color: var(--orange); }
-.cm-s-inner .cm-number,       .cm-s-typora-default .cm-number       { color: var(--orange); }
-.cm-s-inner .cm-def,          .cm-s-typora-default .cm-def          { color: var(--gold); }
-.cm-s-inner .cm-builtin,      .cm-s-typora-default .cm-builtin      { color: var(--cyan); }
-.cm-s-inner .cm-qualifier,    .cm-s-typora-default .cm-qualifier    { color: var(--cyan); }
-.cm-s-inner .cm-variable,     .cm-s-typora-default .cm-variable     { color: var(--salmon); }
-.cm-s-inner .cm-variable-2,   .cm-s-typora-default .cm-variable-2   { color: var(--text-color); }
-.cm-s-inner .cm-variable-3,   .cm-s-typora-default .cm-variable-3   { color: var(--teal); }
-.cm-s-inner .cm-type,         .cm-s-typora-default .cm-type         { color: var(--teal); }
-.cm-s-inner .cm-property,     .cm-s-typora-default .cm-property     { color: var(--indigo); }
-.cm-s-inner .cm-operator,     .cm-s-typora-default .cm-operator     { color: var(--teal); }
-.cm-s-inner .cm-comment,      .cm-s-typora-default .cm-comment      { color: var(--text-dim); font-style: italic; }
-.cm-s-inner .cm-string,       .cm-s-typora-default .cm-string       { color: var(--green); }
-.cm-s-inner .cm-string-2,     .cm-s-typora-default .cm-string-2     { color: var(--teal); }
-.cm-s-inner .cm-meta,         .cm-s-typora-default .cm-meta         { color: var(--accent); }
-.cm-s-inner .cm-header,       .cm-s-typora-default .cm-header       { color: var(--accent); font-weight: 700; }
-.cm-s-inner .cm-link,         .cm-s-typora-default .cm-link         { color: var(--accent); }
-.cm-s-inner .cm-strong,       .cm-s-typora-default .cm-strong       { color: var(--orange); font-weight: 700; }
-.cm-s-inner .cm-em,           .cm-s-typora-default .cm-em           { color: var(--accent); font-style: italic; }
-.cm-s-inner .cm-tag,          .cm-s-typora-default .cm-tag          { color: var(--magenta); }
-.cm-s-inner .cm-attribute,    .cm-s-typora-default .cm-attribute    { color: var(--mint); }
-.cm-s-inner .cm-bracket,      .cm-s-typora-default .cm-bracket      { color: var(--text-muted); }
-.cm-s-inner .cm-punctuation,  .cm-s-typora-default .cm-punctuation  { color: var(--text-muted); }
-.cm-s-inner .cm-error,        .cm-s-typora-default .cm-error        { color: var(--red); }
+.cm-s-inner .cm-keyword,
+.cm-s-typora-default .cm-keyword {
+    color: var(--magenta);
+}
+.cm-s-inner .cm-atom,
+.cm-s-typora-default .cm-atom {
+    color: var(--orange);
+}
+.cm-s-inner .cm-number,
+.cm-s-typora-default .cm-number {
+    color: var(--orange);
+}
+.cm-s-inner .cm-def,
+.cm-s-typora-default .cm-def {
+    color: var(--gold);
+}
+.cm-s-inner .cm-builtin,
+.cm-s-typora-default .cm-builtin {
+    color: var(--cyan);
+}
+.cm-s-inner .cm-qualifier,
+.cm-s-typora-default .cm-qualifier {
+    color: var(--cyan);
+}
+.cm-s-inner .cm-variable,
+.cm-s-typora-default .cm-variable {
+    color: var(--salmon);
+}
+.cm-s-inner .cm-variable-2,
+.cm-s-typora-default .cm-variable-2 {
+    color: var(--text-color);
+}
+.cm-s-inner .cm-variable-3,
+.cm-s-typora-default .cm-variable-3 {
+    color: var(--teal);
+}
+.cm-s-inner .cm-type,
+.cm-s-typora-default .cm-type {
+    color: var(--teal);
+}
+.cm-s-inner .cm-property,
+.cm-s-typora-default .cm-property {
+    color: var(--indigo);
+}
+.cm-s-inner .cm-operator,
+.cm-s-typora-default .cm-operator {
+    color: var(--teal);
+}
+.cm-s-inner .cm-comment,
+.cm-s-typora-default .cm-comment {
+    color: var(--text-dim);
+    font-style: italic;
+}
+.cm-s-inner .cm-string,
+.cm-s-typora-default .cm-string {
+    color: var(--green);
+}
+.cm-s-inner .cm-string-2,
+.cm-s-typora-default .cm-string-2 {
+    color: var(--teal);
+}
+.cm-s-inner .cm-meta,
+.cm-s-typora-default .cm-meta {
+    color: var(--accent);
+}
+.cm-s-inner .cm-header,
+.cm-s-typora-default .cm-header {
+    color: var(--accent);
+    font-weight: 700;
+}
+.cm-s-inner .cm-link,
+.cm-s-typora-default .cm-link {
+    color: var(--accent);
+}
+.cm-s-inner .cm-strong,
+.cm-s-typora-default .cm-strong {
+    color: var(--orange);
+    font-weight: 700;
+}
+.cm-s-inner .cm-em,
+.cm-s-typora-default .cm-em {
+    color: var(--accent);
+    font-style: italic;
+}
+.cm-s-inner .cm-tag,
+.cm-s-typora-default .cm-tag {
+    color: var(--magenta);
+}
+.cm-s-inner .cm-attribute,
+.cm-s-typora-default .cm-attribute {
+    color: var(--mint);
+}
+.cm-s-inner .cm-bracket,
+.cm-s-typora-default .cm-bracket {
+    color: var(--text-muted);
+}
+.cm-s-inner .cm-punctuation,
+.cm-s-typora-default .cm-punctuation {
+    color: var(--text-muted);
+}
+.cm-s-inner .cm-error,
+.cm-s-typora-default .cm-error {
+    color: var(--red);
+}
 .cm-s-inner .CodeMirror-matchingbracket,
 .cm-s-typora-default .CodeMirror-matchingbracket {
-  color: var(--accent) !important;
-  text-decoration: underline;
+    color: var(--accent) !important;
+    text-decoration: underline;
 }
 
 /* ============================================================
  * YAML front matter
  * ========================================================== */
 #write pre.md-meta-block {
-  min-height: 30px;
-  margin: 0 0 2em;
-  padding: 12px 1em;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface);
-  color: var(--text-muted);
-  font-size: 0.85em;
-  line-height: 1.7em;
-  white-space: pre;
+    min-height: 30px;
+    margin: 0 0 2em;
+    padding: 12px 1em;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.85em;
+    line-height: 1.7em;
+    white-space: pre;
 }
 
 /* ============================================================
  * Tables
  * ========================================================== */
 table {
-  width: 100%;
-  margin: 1.2em 0 1.6em;
-  border-collapse: collapse;
-  border-spacing: 0;
-  overflow: hidden;
-  border-radius: 8px;
+    width: 100%;
+    margin: 1.2em 0 1.6em;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
 }
-table th, table td {
-  padding: 9px 14px;
-  border: 1px solid var(--border);
-  line-height: 1.5;
-  vertical-align: top;
+table th,
+table td {
+    padding: 9px 14px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+    vertical-align: top;
+}
+table th:last-child,
+table td:last-child {
+    border-right: 0;
+}
+table tbody tr:last-child td,
+table thead:last-child tr:last-child th {
+    border-bottom: 0;
 }
 table th {
-  background: var(--elevated);
-  color: var(--accent);
-  font-weight: 700;
-  text-align: left;
+    background: var(--elevated);
+    color: var(--accent);
+    font-weight: 700;
+    text-align: left;
 }
-table td { background: var(--bg-color); }
-table tbody tr:nth-child(odd) td { background: var(--surface); }
-table tbody tr:hover td { background: var(--hover); }
-.ty-table-edit { background: var(--elevated); border-top: 1px solid var(--border); }
+table td {
+    background: var(--bg-color);
+}
+table tbody tr:nth-child(odd) td {
+    background: var(--surface);
+}
+table tbody tr:hover td {
+    background: var(--hover);
+}
+.ty-table-edit {
+    background: var(--elevated);
+    border-top: 1px solid var(--border);
+}
 
 /* ============================================================
  * Images & math
  * ========================================================== */
 .md-image > .md-meta {
-  color: var(--text-muted);
-  background: var(--surface);
-  border-radius: 4px;
+    color: var(--text-muted);
+    background: var(--surface);
+    border-radius: 4px;
 }
-.md-image > img { border-radius: 6px; }
+.md-image > img {
+    border-radius: 6px;
+}
 
-.md-inline-math script, .md-inline-math svg { color: var(--cyan); }
-#math-inline-preview .md-arrow:after { background: var(--elevated); }
-.md-mathjax-midline { background: var(--surface); }
-.md-inline-math .md-math-block { color: var(--text-color); }
+.md-inline-math script,
+.md-inline-math svg {
+    color: var(--cyan);
+}
+#math-inline-preview .md-arrow:after {
+    background: var(--elevated);
+}
+.md-mathjax-midline {
+    background: var(--surface);
+}
+.md-inline-math .md-math-block {
+    color: var(--text-color);
+}
 
 /* diagrams */
 #write .md-focus .md-diagram-panel {
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--code-bg);
 }
-.md-diagram-panel-error { color: var(--red); }
+.md-diagram-panel-error {
+    color: var(--red);
+}
 
 /* ============================================================
  * Table of contents
  * ========================================================== */
-.md-toc { margin-top: 2.2em; }
-.md-toc-content { padding-bottom: 16px; color: var(--text-muted); }
-.md-toc-item { color: var(--text-color); }
-.md-toc-item:hover { color: var(--accent); }
-#write div.md-toc-tooltip { background: var(--bg-color); }
-#toc-dropmenu {
-  background: var(--elevated);
-  border: 1px solid var(--border);
+.md-toc {
+    margin-top: 2.2em;
 }
-#toc-dropmenu .divider { background-color: var(--border); }
+.md-toc-content {
+    padding-bottom: 16px;
+    color: var(--text-muted);
+}
+.md-toc-item {
+    color: var(--text-color);
+}
+.md-toc-item:hover {
+    color: var(--accent);
+}
+#write div.md-toc-tooltip {
+    background: var(--bg-color);
+}
+#toc-dropmenu {
+    background: var(--elevated);
+    border: 1px solid var(--border);
+}
+#toc-dropmenu .divider {
+    background-color: var(--border);
+}
 
-.outline-expander:before { color: inherit; top: auto; }
-.outline-item:hover { background: var(--hover); color: var(--text-color); }
-.outline-label:hover { text-decoration: none; }
+.outline-expander:before {
+    color: inherit;
+    top: auto;
+}
+.outline-item:hover {
+    background: var(--hover);
+    color: var(--text-color);
+}
+.outline-label:hover {
+    text-decoration: none;
+}
 
 /* ============================================================
  * Search highlights & selection
  * ========================================================== */
-::selection { background: var(--select-bg); color: var(--text-color); }
-::-moz-selection { background: var(--select-bg); color: var(--text-color); }
-*.in-text-selection { background: var(--select-bg); }
+::selection {
+    background: var(--select-bg);
+    color: var(--text-color);
+}
+::-moz-selection {
+    background: var(--select-bg);
+    color: var(--text-color);
+}
+*.in-text-selection {
+    background: var(--select-bg);
+}
 
 .md-search-hit {
-  background: var(--search-hit-bg);
-  color: #fff;
-  border-radius: 2px;
+    background: var(--search-hit-bg);
+    color: #fff;
+    border-radius: 2px;
 }
-.md-search-hit * { color: #fff; }
+.md-search-hit * {
+    color: #fff;
+}
 
 /* ============================================================
  * Sidebar / file list / outline
  * ========================================================== */
 #typora-sidebar {
-  color: var(--text-color);
-  background: var(--side-bar-bg-color);
-  border-right: 1px solid var(--border-soft);
+    color: var(--text-color);
+    background: var(--side-bar-bg-color);
+    border-right: 1px solid var(--border-soft);
 }
-#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
-  background: var(--border);
+#typora-sidebar:hover
+    div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: var(--border);
 }
 .html-for-mac #typora-sidebar {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
-.sidebar-tabs { border-bottom: 1px solid var(--border-soft); }
-.sidebar-tab { color: var(--text-muted); }
-.sidebar-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.sidebar-tabs {
+    border-bottom: 1px solid var(--border-soft);
+}
+.sidebar-tab {
+    color: var(--text-muted);
+}
+.sidebar-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
 
 .file-list-item,
-.file-library-node { color: var(--text-color); }
+.file-library-node {
+    color: var(--text-color);
+}
 .file-list-item.active,
 .file-library-node.active > .file-node-content {
-  color: var(--active-file-text-color);
+    color: var(--active-file-text-color);
+    box-shadow: inset 1px 0 0 var(--active-file-border-color);
 }
 .file-list-item.active,
 .file-library-node.active > .file-node-background {
-  background: var(--active-file-bg-color) !important;
+    background: var(--active-file-bg-color) !important;
 }
 .file-list-item:hover,
-.file-node-content:hover { background: var(--item-hover-bg-color); }
-.file-list-item-summary,
+.file-node-content:hover {
+    background: var(--item-hover-bg-color);
+}
+.file-list-item-title,
+.file-list-item-file-name,
+.file-node-title {
+    color: var(--accent);
+}
+.file-list-item-summary {
+    color: var(--cyan);
+}
 .file-list-item-time,
-.file-list-item-parent-loc,
-.file-node-title { color: var(--text-muted); }
+.file-list-item-parent-loc {
+    color: var(--text-muted);
+}
 #sidebar-files-menu {
-  border: 1px solid var(--border);
-  background: var(--elevated);
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+    background: var(--elevated);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 }
 .outline-title-wrapper .btn,
-.sidebar-footer-item { color: var(--text-muted); }
-.sidebar-footer-item:hover { background: var(--hover); color: var(--text-color); }
+.sidebar-footer-item {
+    color: var(--text-muted);
+}
+.sidebar-footer-item:hover {
+    background: var(--hover);
+    color: var(--text-color);
+}
 
 /* ============================================================
  * UI chrome — header / footer / menus / dialogs
@@ -525,125 +806,287 @@ footer,
 #typora-quick-open,
 .auto-suggest-container,
 .popover {
-  font-family: "Inter", "PingFang SC", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:
+        "Inter",
+        "PingFang SC",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
 }
 
 .megamenu-opened header,
-.megamenu-menu-panel { background: var(--side-bar-bg-color); }
-header { background: var(--bg-color); border-bottom: 1px solid var(--border-soft); }
-footer.ty-footer { border-color: var(--border-soft); background: var(--bg-color); color: var(--text-muted); }
+.megamenu-menu-panel {
+    background: var(--side-bar-bg-color);
+}
+header {
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--border-soft);
+}
+footer.ty-footer {
+    border-color: var(--border-soft);
+    background: var(--bg-color);
+    color: var(--text-muted);
+}
 
 .context-menu,
 #spell-check-panel,
-#footer-word-count-info { background-color: var(--elevated); color: var(--text-color); }
+#footer-word-count-info {
+    background-color: var(--elevated);
+    color: var(--text-color);
+}
 .context-menu.dropdown-menu .divider,
-.dropdown-menu .divider { background-color: var(--border); }
+.dropdown-menu .divider {
+    background-color: var(--border);
+}
 
-.modal-content { background: var(--side-bar-bg-color); border: 1px solid var(--border); }
-.modal-content input { background: var(--bg-color); color: var(--text-color); border: 1px solid var(--border); }
-.modal-backdrop { background-color: rgba(7, 11, 20, 0.7); }
-.modal-title { font-size: 1.3em; }
-.popover { background: var(--elevated); border: 1px solid var(--border); }
-.popover.bottom > .arrow:after { border-bottom-color: var(--elevated); }
-.popover.top > .arrow:after { border-top-color: var(--elevated); }
+.modal-content {
+    background: var(--side-bar-bg-color);
+    border: 1px solid var(--border);
+}
+.modal-content input {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border);
+}
+.modal-backdrop {
+    background-color: rgba(7, 11, 20, 0.7);
+}
+.modal-title {
+    font-size: 1.3em;
+}
+.popover {
+    background: var(--elevated);
+    border: 1px solid var(--border);
+}
+.popover.bottom > .arrow:after {
+    border-bottom-color: var(--elevated);
+}
+.popover.top > .arrow:after {
+    border-top-color: var(--elevated);
+}
 
-#md-searchpanel { border-bottom: 1px solid var(--border-soft); background: var(--bg-color); }
-#md-searchpanel input { color: var(--text-color); }
+#md-searchpanel {
+    border-bottom: 1px solid var(--border-soft);
+    background: var(--bg-color);
+}
+#md-searchpanel input {
+    color: var(--text-color);
+}
 
 .btn,
-.btn .btn-default { background: transparent; color: var(--text-color); border: 1px solid var(--border); }
-.btn:hover, .btn-default:hover { background: var(--hover); color: var(--text-color); }
-.btn-primary { color: #fff; background: var(--accent); border-color: var(--accent); }
+.btn .btn-default {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border);
+}
+.btn:hover,
+.btn-default:hover {
+    background: var(--hover);
+    color: var(--text-color);
+}
+.btn-primary {
+    color: var(--bg-color);
+    background: var(--accent);
+    border-color: var(--accent);
+}
 
-#typora-quick-open, .auto-suggest-container { background: var(--elevated); border: 1px solid var(--border); }
+#typora-quick-open,
+.auto-suggest-container {
+    background: var(--elevated);
+    border: 1px solid var(--border);
+}
 .typora-quick-open-item.active,
-.typora-quick-open-item:hover { background: var(--accent); color: #fff; }
+.typora-quick-open-item:hover {
+    background: var(--accent);
+    color: var(--bg-color);
+}
 
 .ty-preferences .nav-group-item.active,
-.export-item.active { background: var(--hover); }
-.ty-preferences input[type="search"] { background: var(--bg-color); border-color: var(--border); color: var(--text-color); }
-.ty-preferences select { border: 1px solid var(--border); }
+.export-item.active {
+    background: var(--hover);
+}
+.ty-preferences input[type="search"] {
+    background: var(--bg-color);
+    border-color: var(--border);
+    color: var(--text-color);
+}
+.ty-preferences select {
+    border: 1px solid var(--border);
+}
 
-#ty-tooltip { background: var(--elevated); color: var(--text-color); border: 1px solid var(--border); }
+#ty-tooltip {
+    background: var(--elevated);
+    color: var(--text-color);
+    border: 1px solid var(--border);
+}
 
 /* quick info / hover tips */
-div.code-tooltip, .md-hover-tip .md-arrow:after { background: var(--elevated); }
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: var(--elevated);
+}
 
 /* ============================================================
  * Focus mode  (zed: editor dim ~ text.placeholder)
  * ========================================================== */
 .on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
-  color: var(--text-dim) !important;
+    color: var(--text-dim) !important;
 }
 .on-focus-mode .md-end-block:not(.md-focus) img,
 .on-focus-mode .md-task-list-item:not(.md-focus-container) > input {
-  opacity: 0.4 !important;
+    opacity: 0.4 !important;
 }
-.on-focus-mode .md-fences.md-focus .CodeMirror-code > *:not(.CodeMirror-activeline) *,
+.on-focus-mode
+    .md-fences.md-focus
+    .CodeMirror-code
+    > *:not(.CodeMirror-activeline)
+    *,
 .on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
-  color: var(--text-dim) !important;
+    color: var(--text-dim) !important;
 }
-.on-focus-mode #typora-source .CodeMirror-code > *:not(.CodeMirror-activeline) * {
-  color: var(--text-dim) !important;
+.on-focus-mode
+    #typora-source
+    .CodeMirror-code
+    > *:not(.CodeMirror-activeline)
+    * {
+    color: var(--text-dim) !important;
 }
 .on-focus-mode .md-focus,
-.on-focus-mode .md-focus-container { color: var(--text-color); }
+.on-focus-mode .md-focus-container {
+    color: var(--text-color);
+}
 
 /* ============================================================
  * Typora callout / alert blocks
  * ========================================================== */
-.md-alert-text-note      { color: var(--cyan); }
-.md-alert-text-tip       { color: var(--green); }
-.md-alert-text-important { color: var(--indigo); }
-.md-alert-text-warning   { color: var(--amber); }
-.md-alert-text-caution   { color: var(--red); }
-.md-alert-text-abstract  { color: var(--teal); }
-.md-alert-text-info      { color: var(--accent); }
-.md-alert-text-todo      { color: var(--gold); }
-.md-alert-text-success   { color: var(--green); }
-.md-alert-text-question  { color: var(--mint); }
-.md-alert-text-failure   { color: var(--red); }
-.md-alert-text-danger    { color: var(--red); }
-.md-alert-text-bug       { color: var(--red); }
-.md-alert-text-example   { color: var(--salmon); }
-.md-alert-text-quote     { color: var(--text-muted); }
+.md-alert-text-note {
+    color: var(--cyan);
+}
+.md-alert-text-tip {
+    color: var(--green);
+}
+.md-alert-text-important {
+    color: var(--indigo);
+}
+.md-alert-text-warning {
+    color: var(--amber);
+}
+.md-alert-text-caution {
+    color: var(--red);
+}
+.md-alert-text-abstract {
+    color: var(--teal);
+}
+.md-alert-text-info {
+    color: var(--accent);
+}
+.md-alert-text-todo {
+    color: var(--gold);
+}
+.md-alert-text-success {
+    color: var(--green);
+}
+.md-alert-text-question {
+    color: var(--mint);
+}
+.md-alert-text-failure {
+    color: var(--red);
+}
+.md-alert-text-danger {
+    color: var(--red);
+}
+.md-alert-text-bug {
+    color: var(--red);
+}
+.md-alert-text-example {
+    color: var(--salmon);
+}
+.md-alert-text-quote {
+    color: var(--text-muted);
+}
 
 /* ============================================================
  * Scrollbars
  * ========================================================== */
-::-webkit-scrollbar { width: 9px; height: 9px; }
-::-webkit-scrollbar-track { background: var(--bg-color); }
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background: var(--border);
-  border: 2px solid var(--bg-color);
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
 }
-::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
-::-webkit-scrollbar-thumb:active { background: var(--text-muted); }
-.typora-node::-webkit-scrollbar { width: 6px; }
-.typora-node::-webkit-scrollbar-thumb:vertical { background: rgba(218, 222, 229, 0.25); }
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: var(--border);
+    border: 2px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-dim);
+}
+::-webkit-scrollbar-thumb:active {
+    background: var(--text-muted);
+}
+.typora-node::-webkit-scrollbar {
+    width: 6px;
+}
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(218, 222, 229, 0.25);
+}
 
 /* ============================================================
  * Print
  * ========================================================== */
 @media print {
-  html { font-size: 12pt; background: #fff; }
-  body { background: #fff; color: #1a1d24; }
-  #write { max-width: none; padding: 0; }
+    html {
+        font-size: 12pt;
+        background: #fff;
+    }
+    body {
+        background: #fff;
+        color: #1a1d24;
+    }
+    #write {
+        max-width: none;
+        padding: 0;
+    }
 
-  #write h1, #write h2 { color: #2f3650; border-color: #d9dde5; }
-  #write h3 { color: #0e7490; }
-  #write h4 { color: #0f766e; }
-  #write h5 { color: #92580f; }
-  #write h6 { color: #5b6470; }
+    #write h1,
+    #write h2 {
+        color: #2f3650;
+        border-color: #d9dde5;
+    }
+    #write h3,
+    #write h4 {
+        color: #1a1d24;
+    }
+    #write h5 {
+        color: #5b6470;
+    }
+    #write h6 {
+        color: #5b6470;
+    }
 
-  a { color: #3f46b5; }
-  strong, b { color: #b35900; }
-  code, .md-fences, blockquote, #write pre.md-meta-block,
-  table th, table td {
-    background: #f5f6f8 !important;
-    border-color: #d9dde5 !important;
-    color: #1a1d24 !important;
-  }
-  #typora-sidebar, header, footer, #md-searchpanel { display: none !important; }
+    a {
+        color: #3f46b5;
+    }
+    strong,
+    b {
+        color: #b35900;
+    }
+    code,
+    .md-fences,
+    blockquote,
+    #write pre.md-meta-block,
+    table th,
+    table td {
+        background: #f5f6f8 !important;
+        border-color: #d9dde5 !important;
+        color: #1a1d24 !important;
+    }
+    #typora-sidebar,
+    header,
+    footer,
+    #md-searchpanel {
+        display: none !important;
+    }
 }

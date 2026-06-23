@@ -24,10 +24,8 @@ accent (`#9a9dff`) and a warm orange secondary accent (`#f47700`).
 - **Faithful syntax highlighting** — CodeMirror tokens in both fenced code
   blocks (`.cm-s-inner`) **and** source code mode (`.cm-s-typora-default`) are
   mapped from the Zed `syntax` palette.
-- **Headings** each get their own color — a cool→warm gradient:
-  h1 indigo → h2 cyan → h3 teal → h4 green → h5 amber → h6 muted.
-  (Zed only exposes one `title` scope for all headings, so the per-level
-  gradient is a Typora-only enhancement.)
+- **Readable document hierarchy** — h1 uses cyan, h2 uses the Plannotator
+  lavender title color, and smaller headings stay closer to body text.
 - Full coverage of blockquotes, tables, task lists, YAML front matter, math,
   diagrams, TOC, focus mode, callouts, sidebar/file-list, search highlights,
   and print styles.
@@ -41,12 +39,12 @@ accent (`#9a9dff`) and a warm orange secondary accent (`#f47700`).
 | `surface` | `#151b24` | sidebar, code, blockquote, table stripes |
 | `elevated` | `#222935` | table headers, menus, popovers |
 | `text` | `#dadee5` | body text |
-| `accent` | `#9a9dff` | links, headings (primary) |
-| `orange` | `#f47700` | `strong`, h1 underline, markers |
-| `cyan` | `#00c0cf` | h3, inline code |
-| `teal` | `#00ab93` | h4, types, operators |
+| `accent` | `#9a9dff` | links, h2, selected UI |
+| `orange` | `#f47700` | `strong`, list markers, numbers/constants |
+| `cyan` | `#00c0cf` | h1, inline code, constructors, labels |
+| `teal` | `#00ab93` | types, operators |
 | `green` | `#3fc168` | strings |
-| `amber` | `#d9a514` | h5, warnings |
+| `amber` | `#d9a514` | warnings |
 | `red` | `#f14d4c` | errors |
 | `magenta` | `#d568ea` | keywords, tags |
 | `gold` | `#ffca00` | functions |
