@@ -24,8 +24,10 @@ accent (`#9a9dff`) and a warm orange secondary accent (`#f47700`).
 - **Faithful syntax highlighting** — CodeMirror tokens in both fenced code
   blocks (`.cm-s-inner`) **and** source code mode (`.cm-s-typora-default`) are
   mapped from the Zed `syntax` palette.
-- **Headings** use the Zed `title` color (`#9a9dff`) with a cool→warm gradient
-  (h1 indigo → h3 cyan → h4 teal → h5 amber → h6 muted).
+- **Headings** each get their own color — a cool→warm gradient:
+  h1 indigo → h2 cyan → h3 teal → h4 green → h5 amber → h6 muted.
+  (Zed only exposes one `title` scope for all headings, so the per-level
+  gradient is a Typora-only enhancement.)
 - Full coverage of blockquotes, tables, task lists, YAML front matter, math,
   diagrams, TOC, focus mode, callouts, sidebar/file-list, search highlights,
   and print styles.
@@ -51,6 +53,13 @@ accent (`#9a9dff`) and a warm orange secondary accent (`#f47700`).
 | `salmon` | `#ffa359` | variables |
 | `indigo` | `#9d6afb` | properties |
 | `mint` | `#61d5c0` | attributes |
+
+## Repository contents
+
+| File | Description |
+|---|---|
+| [`plannotator.css`](./plannotator.css) | The Typora theme. |
+| [`plannotator-zed.json`](./plannotator-zed.json) | Original Zed editor theme — the source-of-truth palette this Typora theme is ported from. |
 
 ## Credits
 
